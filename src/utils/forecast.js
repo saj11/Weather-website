@@ -9,7 +9,17 @@ const forecast = (lat, lng, callback) => {
         }else if(body.error){
             callback(body.error, undefined)
         }else{
-            callback(undefined, body.daily.data[0].summary + ` It is currently ${body.currently.temperature} degrees out. There is a ${body.currently.precipProbability}% change of rain.`)   
+            const root = body.daily.data[0]
+
+            callback(undefined, 
+           `${root.summary}
+            \n It is currently ${body.currently.temperature} degrees out.
+            \n There is a ${body.currently.precipProbability}% change of rain.
+            \n Max Temperature: ${root.temperatureMax}.
+            \n Min Temperature: ${root.temperatureMin}.
+            \n Humidity: ${root.humidity}.
+            \n Cloud Covering: ${root.cloudCover*100}%.
+           `)   
         }
     })
 }
