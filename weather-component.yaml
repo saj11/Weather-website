@@ -5,7 +5,6 @@ metadata:
   description: Weather main website
   annotations:
     prometheus.io/rule: scrape_duration_seconds
-    prometheus.io/alert: all
 spec:
   type: website
   lifecycle: production
