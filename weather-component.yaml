@@ -4,7 +4,7 @@ metadata:
   name: weather
   description: Weather main website
   annotations:
-    prometheus.io/rule: memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)
+    prometheus.io/rule: scrape_duration_seconds
     prometheus.io/alert: all
 spec:
   type: website
