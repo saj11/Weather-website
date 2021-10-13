@@ -4,7 +4,7 @@ metadata:
   name: weather
   description: Weather main website
   annotations:
-    prometheus.io/rule: cpd
+    prometheus.io/rule: duplicate_code
 spec:
   type: website
   lifecycle: production
